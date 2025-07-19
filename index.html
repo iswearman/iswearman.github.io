@@ -12,8 +12,26 @@
             <a href="index.html">
                 <img src="images/logo.png" alt="Logo" style="width:400px; height:auto; margin-top:auto; margin-right:870px;">
             </a>
-            <a href="clickme.html" onclick="if (Math.random() < 0.1) { window.location.href = 'https://instagram.com/iswearman; return false; }" style="align-self: center; color: rgb(0, 26, 255); font-size: 2em; text-decoration: underline; margin-top: 20px;">Hello!</a>
-        </div>
+<a href="clickme.html" 
+   onclick="
+     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+     if (isMobile) {
+         if (Math.random() < 0.5) { // 50% chance, adjust as needed
+             window.location.href = 'https://instagram.com/iswearman';
+         } else {
+             window.location.href = 'working.html';
+         }
+         return false;
+     } else {
+         if (Math.random() < 0.1) {
+             window.location.href = 'https://instagram.com/iswearman';
+             return false;
+         }
+     }
+   "
+   style="align-self: center; color: rgb(0, 26, 255); font-size: 2em; text-decoration: underline; margin-top: 20px;">
+   Hello!
+</a>        </div>
     </header>
 
 <div style="background: #222; border-radius: 50px; padding: 20px; max-width: 350px;">
