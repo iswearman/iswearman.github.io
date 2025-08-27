@@ -1,0 +1,26 @@
+.info {
+    background-color: #282e3b;
+    border-radius: 20px;
+    padding: 10px;
+    width: 1220px;
+}
+
+.website{
+    color:black;
+}
+
+.sidepanel {
+    position: fixed;
+    top: 50px;
+    width: 100px;
+    height: 500px;
+    background-color: gray;
+    border-radius: 5px;
+    text-align: center;
+    right: -90px;
+}
+
+.sidepanel:hover {
+    right: 0;
+    transition: left 0.3s ease;
+}

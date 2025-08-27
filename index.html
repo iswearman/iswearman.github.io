@@ -3,56 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
     <title>iswearman</title>
 </head>
 <body background="images/bg.png">
 
+  <div class="website">
     <header>
-        <div style="display: flex; justify-content: flex-end; align-items: flex-start;">
+        <div>
             <a href="index.html">
                 <img src="images/logo.png" alt="Logo" style="width:400px; height:auto; margin-top:auto; margin-right:870px;">
             </a>
-<a href="clickme.html" 
-   onclick="
-     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-     if (isMobile) {
-         if (Math.random() < 0.5) { // 50% chance, adjust as needed
-             window.location.href = 'https://instagram.com/iswearman';
-         } else {
-             window.location.href = 'working.html';
-         }
-         return false;
-     } else {
-         if (Math.random() < 0.1) {
-             window.location.href = 'https://instagram.com/iswearman';
-             return false;
-         }
-     }
-   "
-   style="align-self: center; color: rgb(0, 26, 255); font-size: 2em; text-decoration: underline; margin-top: 20px;">
-   Hello!
-</a>        </div>
+        </div>
     </header>
 
-<div style="background: #222; border-radius: 50px; padding: 20px; max-width: 350px;">
-<h2 style="color:white;">Hello! Welcome to the website of iswearman.</h2>
-<h2 style="color:white;">This is a personal website where I share my projects, ideas, and more.</h2>
-<h2 style="color:white;">Feel free to explore and learn more about what I do.</h2>
-</div>
-<br>
-    <div style="background: #1f1d1d; border-radius: 12px; padding: 20px; max-width: 200px;">
-<p style="color:white;">Links:</p>
-<a href="projects.html" style="color:white;">My Projects</a>
-<br>
-<a href="about.html" style="color:white;">About Me</a>
-<br>
-<a href="contact.html" style="color:white;">Contact</a>
-<br>
-<a href="blog.html" style="color:red;">Blog!</a>
-</div>
+    <div class="info">
+        <h1>Welcome!</h1>
+        <hr>
 
-    <footer>
-        <p style="color:white;">&copy; 2025 iswearman. All rights reserved.</p>
+        <p>I am iswearman, a person that programs and does stuff. <a href="about.html">Learn more about me!</a></p>
+        <hr />
+        <h1>What do I do?</h1>
+        <ul>
+            <li><b>I like to program the most useless things <i>(mostly)</i> in C# or C++. I know some amount of Python, but I am not the sharpest.</b></li>
+            <li><b>I LOVE to do the most unhinged stuff known to man. I don't know why, but I like to. (this does not help with the fact that I am VERY hyperactive)</b></li>
+        </ul>
+        <hr />
+        <p>Use the side panel to view more about me! Have fun</p>
+    </div>
+
+    <div class="sidepanel">
+        <a href="about.html"><img src=images/about.png><img></a>
+        <br>
+        <a href="projects.html"><img src="images/programs.png"></img></a>
+        <br>
+        <a href="contact.html"><img src="images/contact.png"></img></a>
+        <br>
+        <a href="blog.html"><img src="images/blog.png"></img></a>
+    </div>
+
+    <footer style="text-align:center; color:white">
+        <p> &copy; 2025 iswearman. <a href="contact.html">Contact me for any inquiries or any bug.</a></p>
     </footer>
+  </div>
 </body>
 </html>
