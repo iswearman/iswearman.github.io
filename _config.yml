@@ -12,4 +12,4 @@ collections:
 
 feed:
   collections:
-    - blog
+    - _blog
