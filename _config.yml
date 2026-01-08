@@ -2,15 +2,14 @@ title: iswearman Blogs
 description: blog for stuff
 url: https://iswearman.github.io
 
+plugins:
+  - jekyll-feed
+
 collections:
   blog:
     output: true
+    permalink: /blog/:title/
 
 feed:
   collections:
     - blog
-  
-plugins:
-  - jekyll-feed
-
-permalink: /blog/:title/
