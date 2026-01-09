@@ -9,7 +9,7 @@ author: iswearman
 collections:
   blog:
     output: true
-    permalink: /_blog/:title/
+    permalink: /blog/:title/
 
 feed:
   collections:
