@@ -6,4 +6,4 @@ description: blog for stuff
 url: https://iswearman.github.io
 author: iswearman
 
-permalink: /_blog/:title/
+permalink: /blog/:title/
