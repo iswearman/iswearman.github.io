@@ -1,0 +1,81 @@
+---
+layout: none
+title: How to not setup an RSS feed
+date: 2026-01-10
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
+	<title>How to not setup an RSS feed</title>
+</head>
+<body background="https://iswearman.github.io/images/bg.png">
+
+    <header>
+        <div style="display: flex; justify-content: flex-end; align-items: flex-start;">
+            <a href="https://iswearman.github.io/index.html">
+                <img src="https://iswearman.github.io/images/logo.png" alt="Logo" style="width:400px; height:auto; margin-top:auto; margin-right:935px;">
+            </a>
+    </header>
+	
+	<div style="background: #222; border-radius: 50px; padding: 20px; max-width: 500px;">
+	<h1 style="color:white;">iswearman Blogs</h1>
+	<p style="color:white;">---------------------------------------------------</p>
+	<h2 style="color:white; font-family:verdana;">How to not setup an RSS feed</h2>
+	<h5 style="color:red; font-family:arial;">>1 minute read</h5>
+    <h5 style="color:red; font-family:arial;">Published on January 10, 2025</h5>
+    <h3 style="color:white">Contents</h3>
+    <ol style="color:white">
+        <li><a href="#intro" style="color:white;">Introduction</a></li>
+        <li><a href="#beginning" style="color:white;">Gentlemen, a short view back to the past...</a></li>
+        <li><a href="#the-torture-begins" style="color:white;">And so it begins</a></li>
+        <li><a href="#the-end" style="color:white;">The End</a></li>
+    </div>
+	
+	<br>
+	
+	<div style="background: #1f1d1d; border-radius: 50px; padding: 20px; max-width: 500px;">
+    <article id="intro">
+    <h1 style="color:white;">Introduction</h1>
+	<p style="color:white;">You may read the title and say "Wait, you have an RSS feed. Why is the title saying how to NOT set up and RSS feed?"</p>
+	<p style="color:white;">Well, if you see the <a href="https://github.com/iswearman/iswearman.github.io/commits/main/">commit history</a>, you will understand as to why I say that. It took two (or three) days, about 41 commits, which some did fail to finally get a functioning <a href=https://iswearman.github.io/feed.xml>RSS Feed</a>. There were a lot simpler ways to set up one, but the odds were stacked against me for this one. To understand, we must start from the beginning.</p>
+    </article>
+
+    <article id="beginning">
+    <h1 style="color:white;">Gentlemen, a short view back to the past...</h1>
+    <p style="color:white;">When I created this website, I had never intended to make a blog. It was only until July 21st, three days since I started the website that I made this blog. You will only understand why I have added this segment if you know how to make a blog on a GitHub Pages website.</p>
+    <p style="color:white;">To make a blog, you will need a plugin called <a href="https://jekyllrb.com/">Jekyll</a> to make your life easier. I never used Jekyll, and probably never will. I am a idiot. A great one, infact. I left the website dormant for a while until this year, when I decided to start posting more *often*, and so decided to set up an RSS feed.</p>
+    </article>
+
+    <article id="the-torture-begins">
+    <h1 style="color:white;">And so it begins</h1>
+    <p style="color: white;">There was this nice, but vague article by <a href="https://dzhavat.github.io/2020/01/19/adding-an-rss-feed-to-github-pages.html">Dzhavat Ushev</a> that gave a simple idea as how to set up an RSS feed for your website. It first told you to add Jekyll to your website.</p>
+    <p style="color: white;">Sure, at GitHub Actions there were options to add Jekyll to your website. I added the one with GitHub Pages dependancies preinstalled. Great! Now was to set it up</p>
+    <p style="color: white;">I followed the article, and hoped that the feed will come and will bless me in its glorious, hideous XML. Oh was i so wrong. So, so wrong. Commit the changes annnnnnnnd nothing. Absolutely nothing. The feed was there but no post entry. I was stunned. How, what, why? Something had gone wrong, but I don't know what!</p>
+    <p style="color: white;">The debugging was nothing short of pain - tried one thing, didn't work. Tried another thing, made it worse. I feel like the commit history just spoke for itself. The back and forth commits kept happening and happening until I was getting somewhere</p>
+    </article>
+
+    <article id="the-end">
+    <h1 style="color:white;">The End</h1>
+    <p style="color: white;">I just kept on poking in the dark like a madman, and I felt the pain will just never end. I reinstalled dependancies, did things a hundred times, until finally. It happened</p>
+    <p style="color: white;">After pointing Jekyll to the right folder, I pushed the changes and it appeared, beautiful XML showing my blog. I was so happy! The pain was over! I did some minor housekeeping and there we are today!</p>
+    <p style="color: white;">You can view the feed at <a href="https://iswearman.github.io/feed.xml">https://iswearman.github.io/feed.xml</a>. However, some things did break like viewing the blogposts, but the housekeeping had fixed it</p>
+    </article>
+
+    <article id="conclusion">
+    <h1 style="color:white;">Conclusion</h1>
+    <p style="color: white;">So, what happened?</p>
+    <p style="color: white;">Jekyll couldn't find the folder where I was keeping the blogposts and so would not load. That was it. It was my first time doing this, so go easy on me</p>
+    </article>
+
+    <p style="color:white;">Thank you all for reading! It was stupid on my part, but it happens. I hope you enjoyed the read! I will go and do whatever I want to do next and I will see you next time!</p>
+    <p style="color:white;">Cheers!</p>
+    </div>
+    <footer>
+        <p style="color:white;">&copy; 2026 iswearman. All rights reserved.</p>
+    </footer>
+	
+</body>
+</html>
+
+
