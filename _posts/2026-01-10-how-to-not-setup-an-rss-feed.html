@@ -72,9 +72,16 @@ date: 2026-01-10
     <p style="color:white;">Thank you all for reading! It was stupid on my part, but it happens. I hope you enjoyed the read! I will go and do whatever I want to do next and I will see you next time!</p>
     <p style="color:white;">Cheers!</p>
     </div>
-    <footer>
-        <p style="color:white;">&copy; 2026 iswearman. All rights reserved.</p>
+ 
+        <footer style="text-align:center; color:white">
+        <p> &copy; <span id="year"></span> iswearman. <a href="contact.html">Contact me for any inquiries or any bug.</a></p>
     </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
+
 	
 </body>
 </html>

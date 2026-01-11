@@ -49,7 +49,12 @@
     </div>
 
     <footer style="text-align:center; color:white">
-        <p> &copy; 2025 iswearman. <a href="contact.html">Contact me for any inquiries or any bug.</a></p>
+        <p> &copy; <span id="year"></span> iswearman. <a href="contact.html">Contact me for any inquiries or any bug.</a></p>
     </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
 </body>
 </html>

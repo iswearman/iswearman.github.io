@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oh No!</title>
 </head>
-<body background="images/bg.png">
+<body background="https://iswearman.github.io/images/bg.png">
     <header>
         <div style="display: flex; justify-content: flex-end; align-items: flex-start;">
-            <a href="index.html"> <img src="images/logo.png" alt="Logo" style="width:400px; height:auto; margin-top:auto; margin-right:935px;"> </a>
+            <a href="https://iswearman.github.io/index.html"> <img src="https://iswearman.github.io/images/logo.png" alt="Logo" style="width:400px; height:auto; margin-top:auto; margin-right:935px;"> </a>
         </div>
     </header>
 
@@ -18,8 +18,12 @@
 
     <a href="index.html" style="color:white;">Go to Homepage</a>
 
-    <footer>
-        <p style="color:white;">&copy; 2025 iswearman. All rights reserved.</p>
+    <footer style="text-align:center; color:white">
+        <p> &copy; <span id="year"></span> iswearman. <a href="contact.html">Contact me for any inquiries or any bug.</a></p>
     </footer>
-    
+
+  <script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
+
 </html>
