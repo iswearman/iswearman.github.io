@@ -2,7 +2,7 @@
     background-color: #282e3b;
     border-radius: 20px;
     padding: 10px;
-    width: 1220px;
+    width: 1000px;
 }
 
 .website{
@@ -18,8 +18,12 @@
     border-radius: 5px;
     text-align: center;
     right: -90px;
+    z-index: 1000;
 }
-
+marquee {
+    position: relative;
+    z-index: 1;
+}
 .sidepanel:hover {
     right: 0;
     transition: left 0.3s ease;
