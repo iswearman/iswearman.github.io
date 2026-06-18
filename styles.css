@@ -11,9 +11,10 @@
 
 .sidepanel {
     position: fixed;
-    top: 50px;
-    width: 100px;
-    height: 500px;
+    top: 0;
+    left: 200px
+    width: 500px;
+    height: 100px;
     background-color: gray;
     border-radius: 5px;
     text-align: center;
@@ -27,4 +28,11 @@ marquee {
 .sidepanel:hover {
     right: 0;
     transition: left 0.3s ease;
+}
+
+.modi {
+    background-color: transparent;
+    width: 250px; 
+    color: white;
+    text-align: center;
 }
