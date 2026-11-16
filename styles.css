@@ -9,6 +9,15 @@
     color:black;
 }
 
+.bharat{
+    text-align: center;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+}
+
 .sidepanel {
     position: fixed;
     top: 0;
