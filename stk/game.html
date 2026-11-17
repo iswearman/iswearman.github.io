@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shoot the Kanglu</title>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-image: url("media/indbanborder.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        .kanglu {
+            position: absolute;
+            bottom: 0;
+            cursor: pointer;
+            transition: left 1s linear, top 1s linear;
+            user-select: none;
+        }
+
+        #scoreboard {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+
+            color: white;
+            font-size: 36px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+
+            background: rgba(0, 0, 0, .6);
+            padding: 10px 20px;
+            border-radius: 10px;
+
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scoreboard">Points: 0</div>
+
+    <audio id="shootSound" preload="auto">
+        <source src="media/shoot.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="bossSpawnSound" preload="auto">
+        <source src="media/alert.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="gameOverSound" preload="auto">
+        <source src="media/gameover.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const NUM_IMAGES = 10;
+        const kanglus = [];
+
+        const shootSound = document.getElementById("shootSound");
+        const bossSpawnSound = document.getElementById("bossSpawnSound");
+        const gameOverSound = document.getElementById("gameOverSound");
+
+        const scoreboard = document.getElementById("scoreboard");
+
+        let points = 0;
+        let gameOver = false;
+
+        let boss = null;
+        let bossClicked = false;
+
+        for (let i = 0; i < NUM_IMAGES; i++) {
+
+            const img = document.createElement("img");
+            img.src = "media/kanglu.png";
+            img.className = "kanglu";
+
+            img.addEventListener("click", function () {
+
+                if (gameOver) return;
+
+                if (this.style.visibility === "hidden") return;
+
+                shootSound.currentTime = 0;
+                shootSound.play();
+
+                points += 10;
+                scoreboard.textContent = "Points: " + points;
+
+                this.style.visibility = "hidden";
+                this.style.pointerEvents = "none";
+
+                setTimeout(() => {
+
+                    if (gameOver) return;
+
+                    this.style.visibility = "visible";
+                    this.style.pointerEvents = "auto";
+
+                    const maxX = window.innerWidth - this.offsetWidth;
+                    this.style.left = (Math.random() * maxX) + "px";
+
+                }, 2000);
+            });
+
+            document.body.appendChild(img);
+            kanglus.push(img);
+        }
+
+        function moveImages() {
+
+            if (gameOver) return;
+
+            kanglus.forEach(img => {
+
+                if (img.style.visibility === "hidden") return;
+
+                let randomX;
+
+                if (Math.random() < 0.3) {
+
+                    randomX = Math.random() < 0.5
+                        ? -img.offsetWidth
+                        : window.innerWidth + img.offsetWidth;
+
+                } else {
+
+                    randomX = Math.random() *
+                        (window.innerWidth - img.offsetWidth);
+
+                }
+
+                img.style.left = randomX + "px";
+            });
+
+        }
+
+        function spawnBoss() {
+
+            if (gameOver || boss) return;
+
+            bossClicked = false;
+
+            boss = document.createElement("img");
+            boss.src = "media/boss.jpg";
+            boss.className = "kanglu";
+
+            boss.style.left =
+                Math.random() * (window.innerWidth - 150) + "px";
+
+            document.body.appendChild(boss);
+
+            bossSpawnSound.currentTime = 0;
+            bossSpawnSound.play();
+
+            boss.addEventListener("click", function () {
+
+                if (bossClicked || gameOver) return;
+
+                bossClicked = true;
+
+                shootSound.currentTime = 0;
+                shootSound.play();
+
+                points += 100;
+                scoreboard.textContent = "Points: " + points;
+
+                boss.remove();
+                boss = null;
+
+                scheduleBoss();
+
+            });
+
+            setTimeout(() => {
+
+                if (gameOver) return;
+
+                if (!bossClicked && boss) {
+
+                    gameOver = true;
+
+                    boss.remove();
+                    boss = null;
+
+                    clearInterval(gameLoop);
+
+                    setTimeout(() => {
+
+                        gameOverSound.currentTime = 0;
+                        gameOverSound.play();
+
+                        setTimeout(() => {
+                            alert("GAME OVER!\n\nFinal Score: " + points);
+                            window.location.href = "stk.html";
+                        }, 2000);
+                    }, 3000);
+
+                    return;
+                }
+
+                if (boss) {
+                    boss.remove();
+                    boss = null;
+                }
+
+            }, 3000);
+        }
+
+        function scheduleBoss() {
+
+            if (gameOver) return;
+
+            const delay = 5000 + Math.random() * 10000;
+
+            setTimeout(spawnBoss, delay);
+
+        }
+
+        moveImages();
+
+        const gameLoop = setInterval(moveImages, 1000);
+
+        scheduleBoss();
+    </script>
+
+</body>
+</html>

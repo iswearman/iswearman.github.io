@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shoot the Kanglu</title>
+</head>
+<body>
+<div class="intro" align="center">
+<h1>Shoot the Kanglu</h1>
+<p id="random-text"></p>
+</div>
+
+<style>
+body {
+    background-image: url("media/indbanborder.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color:#FFFFFF;
+}
+</style>
+
+<div class="options" align="center">
+<a href="game.html">
+<button>Play the Game</button>
+</a>
+<br>
+<br>
+<button>Source Code</button>
+</div>
+
+<script>
+        const textOptions = [
+            "What's it like to live as a BSF jawan?",
+            "They're calling it the most Islamophobic game of all time",
+            "Saar bangladesh supahpaowah saarrrr...",
+            "Bangladesh closely monitoring situation!",
+            "BNS Bokochoda on duty saar!",
+            "Kanglu Extermination: The Game",
+            "Ami kanglu, ami kanglu",
+        ];
+
+        const randomIndex = Math.floor(Math.random() * textOptions.length);
+
+        document.getElementById("random-text").textContent = textOptions[randomIndex];
+</script>
+
+<footer align="center">
+<p>Lovingly made by iswearman</p>
+<a href="https://iswearman.github.io">Website</a>
+<h3>PLAY THIS ON PC ONLY. NOT FORMATTED FOR MOBILE</h3>
+</footer>
+</body>
+</html>
